@@ -5,6 +5,7 @@ using System.Collections;
 public class DialogSys : MonoBehaviour
 {
     public string[] lines;
+    public Text nameField;
     public string name;
     public Image image;
     public Text dialoguetext;
@@ -16,6 +17,7 @@ public class DialogSys : MonoBehaviour
         dialoguetext.text = string.Empty;
         index = 0;
         StartCoroutine(TypeLine());
+        nameField.text = name;
     }
 
     IEnumerator TypeLine()
@@ -50,7 +52,8 @@ public class DialogSys : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+
         }
     }
 
