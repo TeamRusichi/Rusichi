@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class DialogSys : MonoBehaviour
 {
     public string[] lines;
     public string name;
     public Image image;
-    public float speedtext;
     public Text dialoguetext;
     public int index;
+    [SerializeField] private float speedtext = 0.05f;
 
     void Start()
     {
