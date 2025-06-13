@@ -14,7 +14,7 @@ public class DialogSys : MonoBehaviour
     [SerializeField] private float speedtext = 0.05f;
 
     [Header("End Button Settings")]
-    [SerializeField] private Button endButton; // Кнопка после диалога
+    [SerializeField] private Button endButton; 
     [SerializeField] private string nextSceneName = "Scene2";
 
     void Start()
@@ -27,7 +27,6 @@ public class DialogSys : MonoBehaviour
         if (endButton != null)
         {
             endButton.gameObject.SetActive(false);
-            endButton.onClick.AddListener(LoadNextScene);
         }
     }
 
@@ -66,12 +65,6 @@ public class DialogSys : MonoBehaviour
             if (endButton != null)
                 endButton.gameObject.SetActive(true);
         }
-    }
-
-    private void LoadNextScene()
-    {
-        if (!string.IsNullOrEmpty(nextSceneName))
-            SceneManager.LoadScene(nextSceneName);
     }
 
     void Update()

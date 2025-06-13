@@ -1,20 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections; // Не забываем эту директиву для IEnumerator
+using System.Collections; // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ IEnumerator
 
 public class DialogueEndTracker : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private DialogSys dialogueSystem; // Ваш скрипт диалога
-    [SerializeField] private Button endButton; // Кнопка (изначально скрыта в Unity Editor)
+    [SerializeField] private DialogSys dialogueSystem; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] private Button endButton; // пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Unity Editor)
 
     [Header("Settings")]
     [SerializeField] private string nextSceneName = "NextScene";
 
     private void Start()
     {
-        // Проверяем ссылки
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (dialogueSystem == null)
         {
             Debug.LogError("DialogueSystem not assigned in DialogueEndTracker!");
@@ -23,7 +23,7 @@ public class DialogueEndTracker : MonoBehaviour
 
         if (endButton != null)
         {
-            endButton.gameObject.SetActive(false); // Скрываем кнопку в начале
+            endButton.gameObject.SetActive(false); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             endButton.onClick.AddListener(LoadNextScene);
         }
         else
@@ -31,26 +31,26 @@ public class DialogueEndTracker : MonoBehaviour
             Debug.LogError("End Button not assigned in DialogueEndTracker!");
         }
 
-        // Запускаем корутину отслеживания конца диалога
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         StartCoroutine(WaitForDialogueEnd());
     }
 
-    // Исправлено: правильно написан IEnumerator
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ IEnumerator
     private IEnumerator WaitForDialogueEnd()
     {
-        // Ждем, пока индекс диалога не станет последним
+        // пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         while (dialogueSystem.index < dialogueSystem.lines.Length - 1)
         {
-            yield return null; // Ждем каждый кадр
+            yield return null; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         }
 
-        // Дополнительная проверка: ждем, пока игрок не "прожимает" последнюю реплику
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         while (dialogueSystem.gameObject != null)
         {
             yield return null;
         }
 
-        // Активируем кнопку после уничтожения DialogSys
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ DialogSys
         if (endButton != null)
         {
             endButton.gameObject.SetActive(true);
@@ -62,6 +62,7 @@ public class DialogueEndTracker : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
+            // TODO: Flashbang + delay
             SceneManager.LoadScene(nextSceneName);
         }
         else
