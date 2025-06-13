@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 35d4e056ab2f6394ca9818fad9f84c31
+guid: 8cfb1569ed7cf3840bb0cb5e809fb7b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3588416609911498712
-    second: Vector-Archer-PNG-Download-Image_0
+      213: -307252040755512792
+    second: "\u043C\u0435\u0447\u043D\u0438\u043A_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vector-Archer-PNG-Download-Image_0
+      name: "\u043C\u0435\u0447\u043D\u0438\u043A_0"
       rect:
         serializedVersion: 2
-        x: 57
-        y: 31
-        width: 1140
-        height: 1085
+        x: 0
+        y: 0
+        width: 361
+        height: 654
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d7e2ebf4ed9cc130800000000000000
-      internalID: 3588416609911498712
+      spriteID: 82af04695eb6cbbf0800000000000000
+      internalID: -307252040755512792
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Vector-Archer-PNG-Download-Image_0: 3588416609911498712
+      "\u043C\u0435\u0447\u043D\u0438\u043A_0": -307252040755512792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
