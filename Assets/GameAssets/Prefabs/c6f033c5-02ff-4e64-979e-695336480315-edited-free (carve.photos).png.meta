@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6bd655bd059be714695f3c7fe6a8e000
+guid: 22451596633af7e4189eedbed218b736
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3794987376932767627
-    second: petya-Photoroom_0
+      213: -7352008160019854164
+    second: c6f033c5-02ff-4e64-979e-695336480315-edited-free (carve.photos)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: petya-Photoroom_0
+      name: c6f033c5-02ff-4e64-979e-695336480315-edited-free (carve.photos)_0
       rect:
         serializedVersion: 2
-        x: 378
-        y: 40
-        width: 298
-        height: 845
+        x: 92
+        y: 53
+        width: 357
+        height: 860
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b874b21a9e08aa430800000000000000
-      internalID: 3794987376932767627
+      spriteID: cac4e34f78b68f990800000000000000
+      internalID: -7352008160019854164
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      petya-Photoroom_0: 3794987376932767627
+      c6f033c5-02ff-4e64-979e-695336480315-edited-free (carve.photos)_0: -7352008160019854164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

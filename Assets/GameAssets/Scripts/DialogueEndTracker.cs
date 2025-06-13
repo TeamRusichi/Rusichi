@@ -1,73 +1,104 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections; // �� �������� ��� ��������� ��� IEnumerator
+using System.Collections;
 
 public class DialogueEndTracker : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private DialogSys dialogueSystem; // ��� ������ �������
-    [SerializeField] private Button endButton; // ������ (���������� ������ � Unity Editor)
+    [SerializeField] private DialogSys dialogueSystem;
+    [SerializeField] private Button endButton;
+    [SerializeField] private Image flashImage; // Добавляем компонент Image для вспышки
 
     [Header("Settings")]
     [SerializeField] private string nextSceneName = "NextScene";
+    [SerializeField] private float flashDuration = 1.0f; // Длительность вспышки
+    [SerializeField] private Color flashColor = Color.white; // Цвет вспышки
 
     private void Start()
     {
-        // ��������� ������
+        // Настройка вспышки
+        if (flashImage != null)
+        {
+            flashImage.gameObject.SetActive(false);
+            flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
+        }
+
         if (dialogueSystem == null)
         {
-            Debug.LogError("DialogueSystem not assigned in DialogueEndTracker!");
+            Debug.LogError("DialogueSystem not assigned!");
             return;
         }
 
         if (endButton != null)
         {
-            endButton.gameObject.SetActive(false); // �������� ������ � ������
-            endButton.onClick.AddListener(LoadNextScene);
+            endButton.gameObject.SetActive(false);
+            endButton.onClick.AddListener(StartFlashSequence);
         }
         else
         {
-            Debug.LogError("End Button not assigned in DialogueEndTracker!");
+            Debug.LogError("End Button not assigned!");
         }
 
-        // ��������� �������� ������������ ����� �������
         StartCoroutine(WaitForDialogueEnd());
     }
 
-    // ����������: ��������� ������� IEnumerator
     private IEnumerator WaitForDialogueEnd()
     {
-        // ����, ���� ������ ������� �� ������ ���������
         while (dialogueSystem.index < dialogueSystem.lines.Length - 1)
         {
-            yield return null; // ���� ������ ����
+            yield return null;
         }
 
-        // �������������� ��������: ����, ���� ����� �� "���������" ��������� �������
         while (dialogueSystem.gameObject != null)
         {
             yield return null;
         }
 
-        // ���������� ������ ����� ����������� DialogSys
         if (endButton != null)
         {
             endButton.gameObject.SetActive(true);
-            Debug.Log("Dialogue ended - button activated!");
         }
     }
 
-    private void LoadNextScene()
+    private void StartFlashSequence()
     {
+        StartCoroutine(FlashAndLoadScene());
+    }
+
+    private IEnumerator FlashAndLoadScene()
+    {
+        if (flashImage == null) yield break;
+
+        // Активируем изображение вспышки
+        flashImage.gameObject.SetActive(true);
+
+        // Плавное нарастание вспышки
+        float elapsedTime = 0f;
+        while (elapsedTime < flashDuration / 2)
+        {
+            float alpha = Mathf.Lerp(0f, 1f, elapsedTime / (flashDuration / 2));
+            flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Плавное затухание вспышки
+        elapsedTime = 0f;
+        while (elapsedTime < flashDuration / 2)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / (flashDuration / 2));
+            flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Деактивируем вспышку и переходим на сцену
+        flashImage.gameObject.SetActive(false);
+
         if (!string.IsNullOrEmpty(nextSceneName))
         {
-            // TODO: Flashbang + delay
             SceneManager.LoadScene(nextSceneName);
-        }
-        else
-        {
-            Debug.LogWarning("Next scene name is not set in DialogueEndTracker!");
         }
     }
 }
