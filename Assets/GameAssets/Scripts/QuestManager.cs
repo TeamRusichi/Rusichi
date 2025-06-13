@@ -10,6 +10,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private float playerSpeed;
 
     private Vector2 targetPosition;
+    private bool isPlayerRotated = false;
     public void Start()
     {
         InitCollider();
@@ -20,6 +21,23 @@ public class QuestManager : MonoBehaviour
     private void OnMouseDown()
     {
         var mpos = Mouse.current.position.ReadValue();
+        var playerScale = player.localScale;
+
+        if (mpos.x > player.anchoredPosition.x && isPlayerRotated)
+        {
+            playerScale.x *= -1;
+            isPlayerRotated = false;
+            Debug.Log("Player Rotated");
+        } 
+        else if (mpos.x < player.anchoredPosition.x && !isPlayerRotated)
+        {
+            playerScale.x *= -1;
+            isPlayerRotated = true;
+            Debug.Log("Player Rotated");
+        }
+        
+        player.localScale = playerScale;
+        
         player.anchoredPosition = mpos;
         Debug.Log(mpos);
         
@@ -47,6 +65,5 @@ public class QuestManager : MonoBehaviour
         {
             Debug.LogError("QuestManager's rectTransform is not initialized!");
         }
-
     }
 }
