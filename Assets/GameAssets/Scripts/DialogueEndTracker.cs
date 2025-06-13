@@ -82,20 +82,6 @@ public class DialogueEndTracker : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        // Плавное затухание вспышки
-        elapsedTime = 0f;
-        while (elapsedTime < flashDuration / 2)
-        {
-            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / (flashDuration / 2));
-            flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        // Деактивируем вспышку и переходим на сцену
-        flashImage.gameObject.SetActive(false);
-
         if (!string.IsNullOrEmpty(nextSceneName))
         {
             SceneManager.LoadScene(nextSceneName);
