@@ -489,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572027727269648379, guid: 89bcf82e9fa61c344aa6473b59a3760c, type: 3}
       propertyPath: lines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3572027727269648379, guid: 89bcf82e9fa61c344aa6473b59a3760c, type: 3}
       propertyPath: 'lines.Array.data[0]'
