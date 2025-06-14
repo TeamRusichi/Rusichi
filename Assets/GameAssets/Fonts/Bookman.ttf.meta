@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8a2b9e2a607dd2143b58c44bc32410b4
+guid: c7227c6ec4a3e9548b718fa9629462a4
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,8 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Electronic Highway Sign
   fontNames:
-  - Electronic Highway Sign
+  - Bookman Old Style Cyr
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
