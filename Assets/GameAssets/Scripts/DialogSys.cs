@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class DialogSys : MonoBehaviour
@@ -12,12 +13,21 @@ public class DialogSys : MonoBehaviour
     public int index;
     [SerializeField] private float speedtext = 0.05f;
 
+    [Header("End Button Settings")]
+    [SerializeField] private Button endButton; 
+    [SerializeField] private string nextSceneName = "Scene2";
+
     void Start()
     {
         dialoguetext.text = string.Empty;
         index = 0;
         StartCoroutine(TypeLine());
         nameField.text = name;
+
+        if (endButton != null)
+        {
+            endButton.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator TypeLine()
@@ -52,16 +62,14 @@ public class DialogSys : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
-
+            if (endButton != null)
+                endButton.gameObject.SetActive(true);
         }
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
             SkipNextClick();
-        }
     }
 }
