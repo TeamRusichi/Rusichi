@@ -8,9 +8,9 @@ public class QuestManager : MonoBehaviour
 {
     [SerializeField] private RectTransform player;
     [SerializeField] private float playerSpeed = 400.0f;
+    [SerializeField] private bool isPlayerRotated = true;
 
     private Vector2 targetPosition;
-    private bool isPlayerRotated = true;
     private bool isMoving;
     public void Start()
     {
@@ -22,7 +22,15 @@ public class QuestManager : MonoBehaviour
     private void OnMouseDown()
     {
         var mpos = Mouse.current.position.ReadValue();
-        targetPosition = mpos;
+
+        var localPos = new Vector2();
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            gameObject.GetComponent<RectTransform>(), mpos, Camera.main, out localPos
+        );
+
+        var rectT = gameObject.GetComponent<RectTransform>();
+        targetPosition = localPos;
+        Debug.Log($"{localPos} => {targetPosition}");
         var playerScale = player.localScale;
 
         // Handle player sprite direction
@@ -41,7 +49,6 @@ public class QuestManager : MonoBehaviour
         isMoving = true;
         
         // player.anchoredPosition = mpos;
-        Debug.Log(mpos);
     }
 
     void HandleMovement()
@@ -66,7 +73,7 @@ public class QuestManager : MonoBehaviour
     /// <summary>
     /// Initializes collider to entirely fit the QuestZone
     /// </summary>
-    private void InitCollider()
+    public void InitCollider()
     {
         var existingCollider = GetComponent<BoxCollider2D>();
         if(existingCollider != null) DestroyImmediate(existingCollider);
@@ -86,3 +93,18 @@ public class QuestManager : MonoBehaviour
         }
     }
 }
+// The following code runs in editor - not in runtime.
+// It allows to add functionality directly into the editor.
+#if UNITY_EDITOR
+[CustomEditor(typeof(QuestManager))]
+public class QuestManagerCustomInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        var b = (QuestManager)target;
+        if (GUILayout.Button("Update collision box")) b.InitCollider();
+    }
+}
+#endif
