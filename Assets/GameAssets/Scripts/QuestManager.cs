@@ -7,10 +7,11 @@ using UnityEngine.InputSystem;
 public class QuestManager : MonoBehaviour
 {
     [SerializeField] private RectTransform player;
-    [SerializeField] private float playerSpeed;
+    [SerializeField] private float playerSpeed = 400.0f;
 
     private Vector2 targetPosition;
-    private bool isPlayerRotated = false;
+    private bool isPlayerRotated = true;
+    private bool isMoving;
     public void Start()
     {
         InitCollider();
@@ -21,27 +22,45 @@ public class QuestManager : MonoBehaviour
     private void OnMouseDown()
     {
         var mpos = Mouse.current.position.ReadValue();
+        targetPosition = mpos;
         var playerScale = player.localScale;
 
+        // Handle player sprite direction
         if (mpos.x > player.anchoredPosition.x && isPlayerRotated)
         {
             playerScale.x *= -1;
             isPlayerRotated = false;
-            Debug.Log("Player Rotated");
         } 
         else if (mpos.x < player.anchoredPosition.x && !isPlayerRotated)
         {
             playerScale.x *= -1;
             isPlayerRotated = true;
-            Debug.Log("Player Rotated");
         }
-        
         player.localScale = playerScale;
         
-        player.anchoredPosition = mpos;
-        Debug.Log(mpos);
+        isMoving = true;
         
-        //TODO move to/lerp
+        // player.anchoredPosition = mpos;
+        Debug.Log(mpos);
+    }
+
+    void HandleMovement()
+    {
+        if(!isMoving) return;
+        
+        // Move the player
+        player.anchoredPosition = Vector2.MoveTowards(player.anchoredPosition, targetPosition, playerSpeed * Time.deltaTime);
+        
+        // Stop moving if player is close to the destination
+        if (Vector2.Distance(player.anchoredPosition, targetPosition) < 0.1f)
+        {
+            isMoving = false;
+        }
+    }
+    
+    void Update()
+    {
+        HandleMovement();
     }
     
     /// <summary>
