@@ -102,6 +102,8 @@ MonoBehaviour:
   dialoguetext: {fileID: 5956581436081498868}
   index: 1
   speedtext: 0.05
+  endButton: {fileID: 0}
+  nextSceneName: Scene2
 --- !u!1 &2199250240236747155
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +170,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c7227c6ec4a3e9548b718fa9629462a4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -247,7 +249,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c7227c6ec4a3e9548b718fa9629462a4, type: 3}
     m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
