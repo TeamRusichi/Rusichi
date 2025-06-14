@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 using System.Collections;
 
 public class DialogSys : MonoBehaviour
@@ -14,8 +15,10 @@ public class DialogSys : MonoBehaviour
     [SerializeField] private float speedtext = 0.05f;
 
     [Header("End Button Settings")]
-    [SerializeField] private Button endButton; 
+    [SerializeField] private Button endButton;
     [SerializeField] private string nextSceneName = "Scene2";
+
+    public event Action OnDialogueEnd;
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class DialogSys : MonoBehaviour
         if (endButton != null)
         {
             endButton.gameObject.SetActive(false);
+            endButton.onClick.AddListener(() => SceneManager.LoadScene(nextSceneName));
         }
     }
 
@@ -37,10 +41,20 @@ public class DialogSys : MonoBehaviour
             dialoguetext.text += c;
             yield return new WaitForSeconds(speedtext);
         }
+
+        // Проверяем конец диалога после печати строки
+        if (IsDialogueEnded())
+        {
+            
+            Debug.Log("Dialogue.End");
+            OnDialogueEnd?.Invoke();
+        }
     }
 
     public void SkipNextClick()
     {
+        if (IsDialogueEnded()) return;
+
         if (dialoguetext.text == lines[index])
         {
             NextLine();
@@ -49,6 +63,12 @@ public class DialogSys : MonoBehaviour
         {
             StopAllCoroutines();
             dialoguetext.text = lines[index];
+
+            // Если это последняя строка
+            if (IsDialogueEnded())
+            {
+                OnDialogueEnd?.Invoke();
+            }
         }
     }
 
@@ -64,7 +84,15 @@ public class DialogSys : MonoBehaviour
         {
             if (endButton != null)
                 endButton.gameObject.SetActive(true);
+            OnDialogueEnd?.Invoke();
         }
+    }
+
+    public bool IsDialogueEnded()
+    {
+        Debug.Log($"{index} >= {lines.Length}-1 && {dialoguetext.text}=={lines[index]}");
+        Debug.Log($"{index >= lines.Length - 1 && dialoguetext.text == lines[index]}");
+        return index >= lines.Length - 1 && dialoguetext.text == lines[index];
     }
 
     void Update()
