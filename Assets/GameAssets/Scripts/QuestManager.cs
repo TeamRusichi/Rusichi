@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(RectTransform))]
 public class QuestManager : MonoBehaviour
 {
+    [SerializeField] private List<IQuestObject> questObjects;
     [SerializeField] private RectTransform player;
     [SerializeField] private float playerSpeed = 400.0f;
     [SerializeField] private bool isPlayerRotated = true;
@@ -21,16 +23,16 @@ public class QuestManager : MonoBehaviour
     
     private void OnMouseDown()
     {
-        var mpos = Mouse.current.position.ReadValue();
+        var mpos = Input.mousePosition;
 
-        var localPos = new Vector2();
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            gameObject.GetComponent<RectTransform>(), mpos, Camera.main, out localPos
+        var mappedMPos = new Vector2(
+            CustomTools.Remap(mpos.x, 0, Screen.width, 0, 1920),
+            CustomTools.Remap(mpos.y, 0, Screen.height, 0, 1080)
         );
-
-        var rectT = gameObject.GetComponent<RectTransform>();
-        targetPosition = localPos;
-        Debug.Log($"{localPos} => {targetPosition}");
+        
+        targetPosition = mappedMPos;
+        
+        
         var playerScale = player.localScale;
 
         // Handle player sprite direction

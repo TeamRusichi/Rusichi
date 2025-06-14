@@ -7,5 +7,5 @@ public abstract class IQuestObject : MonoBehaviour
     private BoxCollider2D boxCollider;
     private RectTransform rectTransform;
 
-    public abstract void OnMouseClick();
+    public abstract void OnPlayerApproach();
 }
