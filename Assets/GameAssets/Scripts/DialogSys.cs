@@ -42,7 +42,7 @@ public class DialogSys : MonoBehaviour
             yield return new WaitForSeconds(speedtext);
         }
 
-        // Проверяем конец диалога после печати строки
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (IsDialogueEnded())
         {
             
@@ -53,7 +53,11 @@ public class DialogSys : MonoBehaviour
 
     public void SkipNextClick()
     {
-        if (IsDialogueEnded()) return;
+        if (IsDialogueEnded())
+        {
+            endButton.gameObject.SetActive(true);
+            return;
+        }
 
         if (dialoguetext.text == lines[index])
         {
@@ -64,7 +68,7 @@ public class DialogSys : MonoBehaviour
             StopAllCoroutines();
             dialoguetext.text = lines[index];
 
-            // Если это последняя строка
+            // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             if (IsDialogueEnded())
             {
                 OnDialogueEnd?.Invoke();

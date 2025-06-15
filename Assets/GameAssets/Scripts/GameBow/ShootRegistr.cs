@@ -44,13 +44,13 @@ public class GameManager : MonoBehaviour
     private void Victory()
     {
         Debug.Log("Pobeda!");
-        SceneManager.LoadScene("VictoryScene");
+        SceneManager.LoadScene("Level2");
     }
 
     private void Defeat()
     {
         Debug.Log("Porajenie!");
-        SceneManager.LoadScene("DefeatScene");
+        SceneManager.LoadScene("GameBow");
     }
 
     public void ResetGame()
