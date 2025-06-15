@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae5733697c3b1c54fa2d4da23c34ae11
+guid: 0c863d8ce3f855542b836015347276a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1165108160344718819
-    second: fullsuvorov2_0
+      213: -8583225637339430431
+    second: "\u0420\u0430\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430_\u0431\u043E\u0439\u0446\u043E\u0432_\u043D\u0430_\u0427\u0443\u0434\u0441\u043A\u043E\u043C_\u043E\u0437\u0435\u0440\u0435_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fullsuvorov2_0
+      name: "\u0420\u0430\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430_\u0431\u043E\u0439\u0446\u043E\u0432_\u043D\u0430_\u0427\u0443\u0434\u0441\u043A\u043E\u043C_\u043E\u0437\u0435\u0440\u0435_0"
       rect:
         serializedVersion: 2
-        x: 473
-        y: 30
-        width: 542
-        height: 975
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d128eb91d44b4dfe0800000000000000
-      internalID: -1165108160344718819
+      spriteID: 1e18b5b32c142e880800000000000000
+      internalID: -8583225637339430431
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fullsuvorov2_0: -1165108160344718819
+      "\u0420\u0430\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430_\u0431\u043E\u0439\u0446\u043E\u0432_\u043D\u0430_\u0427\u0443\u0434\u0441\u043A\u043E\u043C_\u043E\u0437\u0435\u0440\u0435_0": -8583225637339430431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

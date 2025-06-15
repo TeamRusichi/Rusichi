@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 489e78bd653226340b583edc126ad5b1
+guid: 079b367d63707de49ba4b5052c4a942a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 315822665792983732
-    second: foni-papik-pro-rp6c-p-kartinki-kholmi-na-prozrachnom-fone-1_0
+      213: -5177153099089786266
+    second: pngtree-green-field-blue-lawn-spring-png-image_13427413_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: foni-papik-pro-rp6c-p-kartinki-kholmi-na-prozrachnom-fone-1_0
+      name: pngtree-green-field-blue-lawn-spring-png-image_13427413_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 650
-        height: 400
+        width: 487
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b29b9e8a07026400800000000000000
-      internalID: 315822665792983732
+      spriteID: 66ac0f4afae0728b0800000000000000
+      internalID: -5177153099089786266
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      foni-papik-pro-rp6c-p-kartinki-kholmi-na-prozrachnom-fone-1_0: 315822665792983732
+      pngtree-green-field-blue-lawn-spring-png-image_13427413_0: -5177153099089786266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
