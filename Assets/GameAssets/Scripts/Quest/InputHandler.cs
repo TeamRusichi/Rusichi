@@ -16,15 +16,16 @@ public class InputHandler : MonoBehaviour
             CustomTools.Remap(mpos.y, 0, Screen.height, 0, 1080)
         );
         
-        
         if (gameObject.TryGetComponent(out IQuestObject questObject))
         {
+            playerController.ClearAllSubscriptions();
             playerController.OnPlayerApproached += PlayerEndApproachHandler;
             playerController.MoveTo(mappedMPos, 50);
             _currentQuestObject = questObject;
         }
         else
         {
+            playerController.ClearAllSubscriptions();
             playerController.MoveTo(mappedMPos);
         }
     }

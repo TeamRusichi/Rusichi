@@ -63,4 +63,9 @@ public class PlayerController : MonoBehaviour
             OnPlayerApproached?.Invoke();
         }
     }
+
+    public void ClearAllSubscriptions()
+    {
+        OnPlayerApproached = null;
+    }
 }
