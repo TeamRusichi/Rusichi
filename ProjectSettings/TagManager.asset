@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -41,13 +42,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Petya
-    uniqueID: 3295548749
-    locked: 0
-  - name: Light
-    uniqueID: 1504604939
-    locked: 0
   m_RenderingLayers:
   - Default
-  - White
-  - Petya
