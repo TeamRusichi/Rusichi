@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 400.0f;
     [SerializeField] private bool facingRight = true;
+    [SerializeField] private Animator animator;
     
     private RectTransform rectTransform;
     private Vector2 targetPosition;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveTo(Vector2 position)
     {
+        animator.SetBool("IsMoving", true);
         targetPosition = position;
         isMoving = true;
         UpdateDirection(position.x > rectTransform.anchoredPosition.x);
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     
     public void MoveTo(Vector2 position, float approachDistance)
     {
+        animator.SetBool("IsMoving", true);
         Vector2 currentPos = rectTransform.anchoredPosition;
         Vector2 direction = (position - currentPos).normalized;
         
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if (Vector2.Distance(rectTransform.anchoredPosition, targetPosition) < 0.1f)
         {
             isMoving = false;
+            animator.SetBool("IsMoving", false);
             OnPlayerApproached?.Invoke();
         }
     }
