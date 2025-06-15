@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 079b367d63707de49ba4b5052c4a942a
+guid: ae5733697c3b1c54fa2d4da23c34ae11
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5177153099089786266
-    second: pngtree-green-field-blue-lawn-spring-png-image_13427413_0
+      213: -1165108160344718819
+    second: fullsuvorov2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pngtree-green-field-blue-lawn-spring-png-image_13427413_0
+      name: fullsuvorov2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 487
-        height: 80
+        x: 473
+        y: 30
+        width: 542
+        height: 975
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66ac0f4afae0728b0800000000000000
-      internalID: -5177153099089786266
+      spriteID: d128eb91d44b4dfe0800000000000000
+      internalID: -1165108160344718819
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pngtree-green-field-blue-lawn-spring-png-image_13427413_0: -5177153099089786266
+      fullsuvorov2_0: -1165108160344718819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
