@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         Vector2 currentPos = rectTransform.anchoredPosition;
         Vector2 direction = (position - currentPos).normalized;
         
-        targetPosition = position - direction * approachDistance;
+        targetPosition = new Vector2(position.x, currentPos.y) - new Vector2(direction.x * approachDistance, 0);
         
         isMoving = true;
         UpdateDirection(position.x > currentPos.x);

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 079b367d63707de49ba4b5052c4a942a
+guid: e240aed2dc6b18d4588ef4ff5ff11c0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5177153099089786266
-    second: pngtree-green-field-blue-lawn-spring-png-image_13427413_0
+      213: -5322192238882693610
+    second: ButtonBcg 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pngtree-green-field-blue-lawn-spring-png-image_13427413_0
+      name: ButtonBcg 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 487
-        height: 80
+        width: 1552
+        height: 304
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66ac0f4afae0728b0800000000000000
-      internalID: -5177153099089786266
+      spriteID: 61e5e0f5b56c326b0800000000000000
+      internalID: -5322192238882693610
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pngtree-green-field-blue-lawn-spring-png-image_13427413_0: -5177153099089786266
+      ButtonBcg 1_0: -5322192238882693610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
