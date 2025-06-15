@@ -482,7 +482,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572027727269648379, guid: 89bcf82e9fa61c344aa6473b59a3760c, type: 3}
       propertyPath: 'lines.Array.data[1]'
-      value: 
+      value: "\u0438 \u0433 \u0440 \u0430  \u043E \u043A \u043E \u043D \u0447 \u0435
+        \u043D \u0430"
       objectReference: {fileID: 0}
     - target: {fileID: 3572027727269648379, guid: 89bcf82e9fa61c344aa6473b59a3760c, type: 3}
       propertyPath: 'lines.Array.data[2]'

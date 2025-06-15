@@ -3,6 +3,7 @@ using NUnit.Framework;
 using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -97,6 +98,7 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
             if (allSwordsmansInField&&allArchersInField)
             {
                 Debug.Log($"YOU WON GG!!!!!!!!!!");
+                SceneManager.LoadScene("Level3");
             }
         }
     }
