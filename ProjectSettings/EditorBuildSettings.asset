@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameAssets/Scenes/ProrivScene.unity
     guid: 416d3c16feb33fd43830b5fb8a56c44d
+  - enabled: 1
+    path: Assets/GameAssets/Scenes/PrologueScene.unity
+    guid: 0a7ea538244b2934a92954b30810b06d
+  - enabled: 1
+    path: Assets/GameAssets/Scenes/Levels/Level1.unity
+    guid: c06919a3d78fd124788320e0d3bdde45
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
