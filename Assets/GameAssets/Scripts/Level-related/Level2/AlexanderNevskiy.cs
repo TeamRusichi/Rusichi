@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class AlexanderNevskiy : MonoBehaviour, IQuestObject
 {
+    [SerializeField] private UnityEvent onApproach;
+    
     public void OnPlayerApproach()
     {
-        Debug.Log("Nevskiy interaction fired");
-        SceneManager.LoadScene("Dragndrop minigame");
+        onApproach.Invoke();
     }
 }
