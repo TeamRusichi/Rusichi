@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
     private Image selected;
     bool ArchersInField = false;
     bool SwordsmansInField = false;
+    
+    [SerializeField] private UnityEvent onWin;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -95,7 +98,7 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
             if (allSwordsmansInField&&allArchersInField)
             {
                 Debug.Log($"YOU WON GG!!!!!!!!!!");
-                SceneManager.LoadScene("Level3");
+                onWin.Invoke();
             }
         }
     }
