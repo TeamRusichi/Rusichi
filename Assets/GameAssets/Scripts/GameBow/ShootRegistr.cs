@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class BowMinigameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static BowMinigameManager Instance { get; private set; }
 
     public int shotsFired = 0;
     public int hitsCount = 0;

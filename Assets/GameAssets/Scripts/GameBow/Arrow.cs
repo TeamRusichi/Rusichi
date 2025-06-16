@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowRotation : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float _startAngle;
@@ -25,17 +25,17 @@ public class ArrowRotation : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_hasHit) return;
+        if (_hasHit || collision.gameObject.CompareTag("Arrow")) return;
 
         _isRotating = false;
         rb.isKinematic = true;
         rb.simulated = false;
 
-        // Проверяем, попали ли в мишень (добавьте тег "Target" к вашим мишеням)
         if (collision.gameObject.CompareTag("Target"))
         {
             _hasHit = true;
-            GameManager.Instance.RegisterHit();
+            BowMinigameManager.Instance.RegisterHit();
+            gameObject.transform.SetParent(collision.gameObject.transform);
         }
     }
 }
