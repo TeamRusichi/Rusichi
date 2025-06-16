@@ -118,16 +118,10 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
         Rect rectImg2 = new Rect(corners2[0].x, corners2[0].y,
                                  corners2[2].x - corners2[0].x,
                                  corners2[2].y - corners2[0].y);
-
         return rectImg1.Overlaps(rectImg2);
     }
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-    }
-
-    void Update()
-    {
-
     }
 }

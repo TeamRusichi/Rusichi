@@ -959,6 +959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PetyaPetrovich_v3
       objectReference: {fileID: 0}
+    - target: {fileID: 2542565310767910444, guid: 3140f02080ff4fa4dbcb1ec42e51bdab, type: 3}
+      propertyPath: isSnowStepSounds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3535608453764010585, guid: 3140f02080ff4fa4dbcb1ec42e51bdab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.9
