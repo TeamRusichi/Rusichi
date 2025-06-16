@@ -10,18 +10,18 @@ public class Choice : MonoBehaviour
 
     private void Start()
     {
-        // Подписка на события
-        DialogSys dialogueSystem = FindObjectOfType<DialogSys>();
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        DialogSys_old dialogueSystem = FindObjectOfType<DialogSys_old>();
         if (dialogueSystem != null)
         {
             dialogueSystem.OnDialogueEnd += HandleDialogueEnd;
         }
 
-        // Настройка кнопок
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         MakeButtonInvisible(Proriv);
         MakeButtonInvisible(Obhod);
 
-        // Добавляем обработчики нажатий
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Proriv.onClick.AddListener(() => LoadScene("ProrivScene"));
         Obhod.onClick.AddListener(() => LoadScene("ObhodScene"));
     }
@@ -37,15 +37,15 @@ public class Choice : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Важно отписаться от события при уничтожении объекта
-        DialogSys dialogueSystem = FindObjectOfType<DialogSys>();
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        DialogSys_old dialogueSystem = FindObjectOfType<DialogSys_old>();
         if (dialogueSystem != null)
         {
             dialogueSystem.OnDialogueEnd -= HandleDialogueEnd;
         }
     }
 
-    // Обработчик события окончания диалога
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void HandleDialogueEnd()
     {
         MakeButtonVisible(Proriv);

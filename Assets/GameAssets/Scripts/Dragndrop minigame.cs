@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;

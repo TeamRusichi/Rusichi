@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class CustomTools 
 {
 	public static float Remap(float value, float from1, float to1, float from2, float to2)
