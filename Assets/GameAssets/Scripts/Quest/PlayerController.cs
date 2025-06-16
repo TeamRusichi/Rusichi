@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private RectTransform rectTransform;
     private Vector2 targetPosition;
     private bool isMoving;
+    private bool _isLockedMovement;
 
     public event Action OnPlayerApproached;
     
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public void MoveTo(Vector2 position)
     {
+        if (_isLockedMovement) return;
+        
         animator.SetBool("IsMoving", true);
         targetPosition = position;
         isMoving = true;
@@ -29,6 +32,8 @@ public class PlayerController : MonoBehaviour
     
     public void MoveTo(Vector2 position, float approachDistance)
     {
+        if (_isLockedMovement) return;
+        
         animator.SetBool("IsMoving", true);
         Vector2 currentPos = rectTransform.anchoredPosition;
         Vector2 direction = (position - currentPos).normalized;
@@ -71,5 +76,10 @@ public class PlayerController : MonoBehaviour
     public void ClearAllSubscriptions()
     {
         OnPlayerApproached = null;
+    }
+
+    public void SetLockMovement(bool locked)
+    {
+        _isLockedMovement = locked;
     }
 }
