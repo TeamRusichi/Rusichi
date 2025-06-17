@@ -6,7 +6,7 @@ using System.Collections;
 public class DialogueEndTracker : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private DialogSys dialogueSystem;
+    [SerializeField] private DialogSys_old dialogueSystem;
     [SerializeField] private Button endButton;
     [SerializeField] private Image flashImage; // Добавляем компонент Image для вспышки
 

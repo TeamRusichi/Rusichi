@@ -8,15 +8,15 @@ public class Bow : MonoBehaviour
     void Start()
     {
         _rotation_z = transform.rotation.eulerAngles.z;
-        GameManager.Instance.ResetGame();
+        BowMinigameManager.Instance.ResetGame();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameManager.Instance.shotsFired < GameManager.MaxShots)
+        if (Input.GetMouseButtonDown(0) && BowMinigameManager.Instance.shotsFired < BowMinigameManager.MaxShots)
         {
             Shot();
-            GameManager.Instance.RegisterShot();
+            BowMinigameManager.Instance.RegisterShot();
         }
 
         Aim();
@@ -35,6 +35,7 @@ public class Bow : MonoBehaviour
     void Shot()
     {
         GameObject child = GameObject.Find("Arrow");
+        child.tag = "Arrow";
 
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
@@ -48,7 +49,7 @@ public class Bow : MonoBehaviour
         collider.offset = new Vector2(-1.213752f, 1.915088f);
         collider.size = new Vector2(0.9797218f, 1.049824f);
         var rigidbody = arrow.AddComponent<Rigidbody2D>();
-        arrow.AddComponent<ArrowRotation>();
+        arrow.AddComponent<Arrow>();
         rigidbody.linearVelocity = direction * _arrowSpeed;
         rigidbody.linearDamping = 0.0f;
     }

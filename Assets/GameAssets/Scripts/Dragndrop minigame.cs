@@ -1,7 +1,5 @@
-using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEditor.Searcher;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +14,8 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
     private Image selected;
     bool ArchersInField = false;
     bool SwordsmansInField = false;
+    
+    [SerializeField] private UnityEvent onWin;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -98,7 +98,7 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
             if (allSwordsmansInField&&allArchersInField)
             {
                 Debug.Log($"YOU WON GG!!!!!!!!!!");
-                SceneManager.LoadScene("Level3");
+                onWin.Invoke();
             }
         }
     }
@@ -118,16 +118,10 @@ public class Dragndropminigame : MonoBehaviour, IPointerDownHandler, IBeginDragH
         Rect rectImg2 = new Rect(corners2[0].x, corners2[0].y,
                                  corners2[2].x - corners2[0].x,
                                  corners2[2].y - corners2[0].y);
-
         return rectImg1.Overlaps(rectImg2);
     }
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-    }
-
-    void Update()
-    {
-
     }
 }

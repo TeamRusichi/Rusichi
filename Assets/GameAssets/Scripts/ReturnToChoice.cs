@@ -8,7 +8,7 @@ public class ReturnToChoice : MonoBehaviour
 
     private void Start()
     {
-        DialogSys dialogueSystem = FindObjectOfType<DialogSys>();
+        DialogSys_old dialogueSystem = FindObjectOfType<DialogSys_old>();
         if (dialogueSystem != null)
         {
             dialogueSystem.OnDialogueEnd += HandleDialogueEnd;
@@ -27,7 +27,7 @@ public class ReturnToChoice : MonoBehaviour
     private void OnDestroy()
     {
         
-        DialogSys dialogueSystem = FindObjectOfType<DialogSys>();
+        DialogSys_old dialogueSystem = FindObjectOfType<DialogSys_old>();
         if (dialogueSystem != null)
         {
             dialogueSystem.OnDialogueEnd -= HandleDialogueEnd;
